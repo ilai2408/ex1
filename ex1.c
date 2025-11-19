@@ -9,9 +9,15 @@ Assignment:
 
 int main()
 {
-
+    
     // Ascii
     printf("Ascii:\n");
+    int c;
+    printf("Please enter a character\n");
+    c = getchar();
+    printf("It's numerical value is: %d\n", c);
+    printf("0 for even, 1 for odd: %d\n", c&1);
+
     /*. Scan one character from the user.
         Then, refer to it as an integer.
         a. Print its value.
@@ -21,12 +27,21 @@ int main()
 
     // 2's complement and other representations
     printf("\n2's complement to other representations:\n");
+    int num;
+    printf("Please enter a negative integer\n");
+    scanf("%d", &num);
+    printf("1's complement %d\n", -num-1);
+    printf("unsigned: %u\n", num);
     /*. Scan a negative integer. [2’s complement].
         Print its value in 1’s complement.
         Print its value as unsigned. */
 
     // Shifting right and left
     printf("\nShifting right and left:\n");
+    int n1, n2, n3;
+    printf("Please enter 3 integers\n");
+    scanf("%d %d %d", &n1, &n2, &n3);
+    printf("After shifting right and left: %d\n", (n1>>n2)<<n3); //shifting n1 right and left
     /*. Scan 3 integers.
         The first one - the value you will play with.
         The second and the third - how much to shift right and left, respectively.
@@ -34,12 +49,23 @@ int main()
 
     // Even - Odd
     printf("\nEven - Odd:\n");
+    int num1, num2, num3;
+    printf("Please enter 3 integers\n");
+    scanf("%d %d %d", &num1, &num2, &num3);
+    int counter = (num1&1) + (num2&1) + (num3&1);
+    printf("0 - most of them are even, 1 - most of them are odd: %d\n", counter/2);
+
     /* Scan 3 Integers.
     If at least two of them are even - print 0.
     If at least two of them are odd - print 1. */
-
+    
     // Different Bases
     printf("\nDifferent Bases:\n");
+    int octal, hexadecimal;
+    printf("Please enter two numbers in octal and hexadecimal bases\n");
+    scanf(" %o %x", &octal, &hexadecimal);
+    printf("LSBs: %d %d \n", (octal&1), (hexadecimal&1));
+    printf("MSBs: %d %d \n", (octal>>31), (hexadecimal>>31));
     /*  Scan two numbers:
         One in octal base, one in Hexadecimal base.
         Print their LSB’s.

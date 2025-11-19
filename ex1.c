@@ -30,7 +30,7 @@ int main()
     int num;
     printf("Please enter a negative integer\n");
     scanf("%d", &num);
-    printf("1's complement %d\n", -num-1);
+    printf("1's complement %d\n", num+1);
     printf("unsigned: %u\n", num);
     /*. Scan a negative integer. [2’s complement].
         Print its value in 1’s complement.
@@ -52,8 +52,11 @@ int main()
     int num1, num2, num3;
     printf("Please enter 3 integers\n");
     scanf("%d %d %d", &num1, &num2, &num3);
-    int counter = (num1&1) + (num2&1) + (num3&1);
-    printf("0 - most of them are even, 1 - most of them are odd: %d\n", counter/2);
+    int t1, t2, t3;
+    t1 = num1&1;
+    t2 = num2&1;
+    t3 = num3&1;
+    printf("0 - most of them are even, 1 - most of them are odd: %d\n", (t1&t2)|(t1&t3)|(t2&t3));
 
     /* Scan 3 Integers.
     If at least two of them are even - print 0.
@@ -63,7 +66,7 @@ int main()
     printf("\nDifferent Bases:\n");
     int octal, hexadecimal;
     printf("Please enter two numbers in octal and hexadecimal bases\n");
-    scanf(" %o %x", &octal, &hexadecimal);
+    scanf("%o %x", &octal, &hexadecimal);
     printf("LSBs: %d %d \n", (octal&1), (hexadecimal&1));
     printf("MSBs: %d %d \n", (octal>>31), (hexadecimal>>31));
     /*  Scan two numbers:
